@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.qa-shots/
+scripts/.qa-tmp/
+*.local

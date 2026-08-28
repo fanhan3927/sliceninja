@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+/*
+ * SliceNinja 主题令牌（Tailwind v4 @theme）
+ * 色板来自 PRD 设计要求：道场深棕底 / 暖白文字 / 金橙强调 / 炸弹红
+ */
+@theme {
+  --color-dojo: #140c08;
+  --color-dojo-soft: #241610;
+  --color-dojo-line: #3d2a1d;
+  --color-ink: #fff7e8;
+  --color-ink-dim: #c9b79b;
+  --color-gold: #e8c36a;
+  --color-ember: #ff6b3d;
+  --color-bomb-red: #ff3b3b;
+
+  --font-display: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --font-mono-hud: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #140c08;
+  color: #fff7e8;
+  font-family:
+    system-ui,
+    -apple-system,
+    'PingFang SC',
+    'Microsoft YaHei',
+    sans-serif;
+  /* 移动端：禁止页面滚动 / 橡皮筋 / 双击缩放 */
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HUD 数字等宽 */
+.hud-num {
+  font-family: var(--font-mono-hud);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 金橙强调渐变文字 / 按钮（PRD：#e8c36a → #ff6b3d） */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e8c36a 0%, #ff6b3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

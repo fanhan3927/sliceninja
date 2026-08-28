@@ -1,0 +1,29 @@
+{
+  "name": "sliceninja",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "gen:assets": "node scripts/generate-placeholder-assets.mjs",
+    "qa:unit": "esbuild src/game/physics.ts src/game/blade.ts src/game/difficulty.ts src/game/scoring.ts --bundle --format=cjs --outdir=scripts/.qa-tmp --out-extension:.js=.cjs --log-level=error && node scripts/qa-unit.cjs",
+    "qa:browser": "node scripts/qa-smoke.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.0"
+  }
+}
